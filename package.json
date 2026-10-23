@@ -1,0 +1,35 @@
+{
+  "name": "dsh-auto-review-default",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Publishes the shipped Auto review permission preset as a selectable new-session default in DeepSeek Harness General settings.",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "permission",
+    "auto-review"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XavierMarquis93/dsh-auto-review-default.git"
+  }
+}

@@ -1,0 +1,13 @@
+# Make the shipped Auto review preset selectable as the new-session default and
+# keep it selected while no default has been stored.
+#
+# The row only reads `label`, `description` and `seedDefault`; no settings are
+# written by this plugin (see README: the host rejects settings writes made from a
+# plugin mount transaction).
+- insert:
+    - id: auto-review-default
+      name: 'dsh-auto-review-default'
+      config:
+        label: '自动审查 (Auto review)'
+        description: '无沙箱；每次原生工具调用前由同一模型审查（实验性）。'
+        seedDefault: true

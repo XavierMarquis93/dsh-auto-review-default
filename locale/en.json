@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Auto review as the default permission",
+    "description": "Shows the Auto review preset as the selected new-session default in General settings and keeps new sessions in Auto review."
+  }
+}

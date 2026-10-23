@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Auto review as the default permission">
+  <defs>
+    <linearGradient id="adeShield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f6df6"/>
+      <stop offset="1" stop-color="#22c1a4"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 4 54 12v18c0 14-9.5 25.5-22 30C19.5 55.5 10 44 10 30V12L32 4Z" fill="url(#adeShield)"/>
+  <path d="M22 33.5 29.5 41 43 25" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="47" cy="17" r="6.5" fill="#ffd166" stroke="#1b1b2f" stroke-width="2"/>
+  <path d="M47 12.5v5" fill="none" stroke="#1b1b2f" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
