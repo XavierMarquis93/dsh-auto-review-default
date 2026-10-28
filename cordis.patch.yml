@@ -1,9 +1,20 @@
-# Make the shipped Auto review preset selectable as the new-session default and
-# keep it selected while no default has been stored.
-#
-# The row only reads `label`, `description` and `seedDefault`; no settings are
-# written by this plugin (see README: the host rejects settings writes made from a
-# plugin mount transaction).
+# Make the shipped Auto review preset the effective new-session default, without
+# ever writing into the host's live plugin config:
+#  - `auto` is published on the service *instance* (`service.presets`), so the
+#    host's `config.presets` keeps its identity and a settings edit of the
+#    `permission` entry still applies as a hot volatile update instead of a
+#    restart. A restart is what made `permissionPresets/catalog` answer
+#    "gateway/service-unavailable" while the service was reloading.
+#  - the effective default comes from a `defaultSettings()` override that reads the
+#    value from the Loader entry (resolved config, then raw config, then the value
+#    the settings row shows) — never from `settings.describe()`, which is a
+#    side-effecting read that can be unavailable while the row still shows a choice.
+#  - a write that would persist `defaultPreset: auto` is translated into clearing
+#    the field, and an `internal/config` guard drops such a value before the host
+#    constructor resolves it: the host resolves its configured default before the
+#    reserved identity exists, so a stored `auto` would break the permission
+#    service on every later boot.
+# Set `seedDefault: false` to disable all of it and keep only the status report.
 - insert:
     - id: auto-review-default
       name: 'dsh-auto-review-default'

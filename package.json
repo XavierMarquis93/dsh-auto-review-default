@@ -1,9 +1,9 @@
 {
   "name": "dsh-auto-review-default",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "private": true,
   "type": "module",
-  "description": "Publishes the shipped Auto review permission preset as a selectable new-session default in DeepSeek Harness General settings.",
+  "description": "Publishes the shipped Auto review permission preset as the new-session default in DeepSeek Harness without breaking the host's plugin hot-reload path.",
   "keywords": [
     "deepseek-harness",
     "dsh",
